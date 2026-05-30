@@ -15,8 +15,9 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:supabase_flutter/supabase_flutter.dart' as _i454;
 
-import '../../features/auth/blocs/authentication/authentication_bloc.dart'
-    as _i359;
+import '../../features/auth/presentation/blocs/authentication/authentication_bloc.dart'
+    as _i652;
+import '../../features/auth/presentation/blocs/login/login_bloc.dart' as _i1018;
 import 'register_module.dart' as _i291;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -35,12 +36,15 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i378.SignupUseCase>(() => registerModule.signupUseCase);
     gh.factory<_i378.LoginUseCase>(() => registerModule.loginUseCase);
     gh.factory<_i378.LogoutUseCase>(() => registerModule.logoutUseCase);
-    gh.singleton<_i359.AuthenticationBloc>(
-      () => _i359.AuthenticationBloc(
+    gh.singleton<_i652.AuthenticationBloc>(
+      () => _i652.AuthenticationBloc(
         authRepository: gh<_i378.AuthRepository>(),
         logoutUseCase: gh<_i378.LogoutUseCase>(),
       ),
       dispose: (i) => i.close(),
+    );
+    gh.factory<_i1018.LoginBloc>(
+      () => _i1018.LoginBloc(loginUseCase: gh<_i378.LoginUseCase>()),
     );
     return this;
   }

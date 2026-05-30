@@ -4,7 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'core/di/di.dart';
-import 'features/auth/blocs/authentication/authentication_bloc.dart';
+import 'features/auth/presentation/blocs/authentication/authentication_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
