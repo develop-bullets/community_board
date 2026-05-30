@@ -34,7 +34,8 @@ GoRouter createRouter(AuthenticationBloc authBloc) {
         return isSplash ? null : RoutePaths.splash;
       }
 
-      if (authStatus == AuthenticationStatus.authenticated) {
+      if (true) {
+      // if (authStatus == AuthenticationStatus.authenticated) {
         if (isSplash || isAuthRoute) return RoutePaths.post;
       } else {
         if (!isAuthRoute) return RoutePaths.login;

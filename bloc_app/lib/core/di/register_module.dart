@@ -1,19 +1,21 @@
 import 'dart:async';
 
 import 'package:data_supabase/auth.dart';
+
 // import 'package:data_supabase/post.dart';
 // import 'package:data_supabase/profile.dart';
 // import 'package:data_supabase/search.dart';
 import 'package:domain/auth.dart';
+
 // import 'package:domain/post.dart';
 // import 'package:domain/profile.dart';
 // import 'package:domain/search.dart';
-// import 'package:go_router/go_router.dart';
+import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-// import '../../features/auth/presentation/blocs/authentication/authentication_bloc.dart';
-// import '../config/router/app_router.dart';
+import '../../features/auth/presentation/blocs/authentication/authentication_bloc.dart';
+import '../config/router/app_router.dart';
 
 // FutureOr<void> disposeRealtimeDataSource(RealtimeRemoteDataSource instance) {
 //   instance.dispose();
@@ -32,8 +34,8 @@ abstract class RegisterModule {
   @singleton
   SupabaseClient get supabaseClient => Supabase.instance.client;
 
-  // @singleton
-  // GoRouter router(AuthenticationBloc authBloc) => createRouter(authBloc);
+  @singleton
+  GoRouter router(AuthenticationBloc authBloc) => createRouter(authBloc);
 
   /// --- Data Layer Registration (LazySingleton) ---
   // auth
