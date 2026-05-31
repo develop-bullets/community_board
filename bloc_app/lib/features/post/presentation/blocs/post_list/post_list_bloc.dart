@@ -36,7 +36,7 @@ class PostListBloc extends Bloc<PostListEvent, PostListState> {
     on<PostListFetched>(_onPostListFetched);
     on<PostListNextPageFetched>(_onPostListNextPageFetched);
     on<PostListRefreshed>(_onPostListRefreshed);
-    // on<PostListTransientFailureConsumed>(_onPostListTransientFailureConsumed);
+    on<PostListTransientFailureConsumed>(_onPostListTransientFailureConsumed);
     // on<PostLikeToggled>(_onPostLikeToggled);
     // on<_GlobalEventReceived>(_onGlobalEventReceived);
     // on<_PostListRefillRequested>(_onPostListRefillRequested);
@@ -186,12 +186,12 @@ class PostListBloc extends Bloc<PostListEvent, PostListState> {
     );
   }
 
-  // void _onPostListTransientFailureConsumed(
-  //   PostListTransientFailureConsumed event,
-  //   Emitter<PostListState> emit,
-  // ) {
-  //   emit(state.copyWith(transientFailure: () => null));
-  // }
+  void _onPostListTransientFailureConsumed(
+    PostListTransientFailureConsumed event,
+    Emitter<PostListState> emit,
+  ) {
+    emit(state.copyWith(transientFailure: () => null));
+  }
 
   // Future<void> _onPostLikeToggled(
   //   PostLikeToggled event,

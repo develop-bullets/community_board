@@ -13,7 +13,7 @@ final class PostListNextPageFetched extends PostListEvent {}
 
 final class PostListRefreshed extends PostListEvent {}
 
-// final class PostListTransientFailureConsumed extends PostListEvent {}
+final class PostListTransientFailureConsumed extends PostListEvent {}
 
 // final class PostLikeToggled extends PostListEvent {
 //   const PostLikeToggled({required this.post});
