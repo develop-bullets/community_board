@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:data_supabase/auth.dart';
 
-// import 'package:data_supabase/post.dart';
+import 'package:data_supabase/post.dart';
 // import 'package:data_supabase/profile.dart';
 // import 'package:data_supabase/search.dart';
 import 'package:domain/auth.dart';
 
-// import 'package:domain/post.dart';
+import 'package:domain/post.dart';
 // import 'package:domain/profile.dart';
 // import 'package:domain/search.dart';
 import 'package:go_router/go_router.dart';
@@ -47,11 +47,11 @@ abstract class RegisterModule {
   AuthRepositoryImpl get authRepository;
 
   // post
-  // @LazySingleton(as: PostRemoteDataSource)
-  // SupabasePostRemoteDataSource get postRemoteDataSource;
+  @LazySingleton(as: PostRemoteDataSource)
+  SupabasePostRemoteDataSource get postRemoteDataSource;
 
-  // @LazySingleton(as: PostRepository)
-  // PostRepositoryImpl get postRepository;
+  @LazySingleton(as: PostRepository)
+  PostRepositoryImpl get postRepository;
 
   // @LazySingleton(
   //   as: RealtimeRemoteDataSource,
@@ -92,8 +92,8 @@ abstract class RegisterModule {
   LogoutUseCase get logoutUseCase;
 
   // post
-  // @injectable
-  // GetPostsUseCase get getPostsUseCase;
+  @injectable
+  GetPostsUseCase get getPostsUseCase;
 
   // @injectable
   // CreatePostUseCase get createPostUseCase;
